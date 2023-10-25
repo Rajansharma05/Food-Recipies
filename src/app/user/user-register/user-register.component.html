@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <style>
+    body {
+      background-image: url("https://www.kagomeindia.com/wp-content/uploads/pasta-with-tomato-sauce-on-plate-2022-02-02-04-49-37-utc-scaled.jpg");
+      background-color: skyblue;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    #userlogin {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      max-width: 50%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #userlogin h2 {
+      color: white;
+    }
+
+    #userlogin .form-group label {
+      color: black;
+    }
+
+    #userlogin .form-control {
+      color: black;
+      height: 40px;
+    }
+
+    #userlogin .btn-warning {
+      background-color: #FFA500;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="userlogin">
+    <div class="text-center">
+      <h2 class="text-primary my-2"><mark>User Registration</mark></h2>
+    </div>
+    <div class="m-5 p-5">
+      <form [formGroup]="userRegisterForm">
+        <div class="form-group">
+          <label for="name" style="color: black;">Name</label>
+          <input type="text" class="form-control" id="name" formControlName="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" style="color: black;">Email id</label>
+          <input type="email" class="form-control" id="email" formControlName="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" style="color: black;">Phone No</label>
+          <input type="text" class="form-control" id="phone" formControlName="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password" style="color: black;">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cpassword" style="color: black;">Confirm Password</label>
+          <input type="password" class="form-control" id="cpassword" formControlName="cpassword" required>
+        </div>
+
+        <button type="submit" class="btn btn-warning" (click)="onUserRegistrationSubmit()">Register</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin login</title>
+</head>
+
+<body id="sect1">
+  <div class="container">
+    <div class="m-5 p-5 " style="height:580px;width:50%;margin-right: 30%;">
+
+      <form [formGroup]="adminFormGroup">
+        <h1 class="text-white my-3">Admin Login</h1>
+        <div class="form-group">
+          <label for="username" style="color:white;">Username</label>
+          <input type="email" class="form-control" id="username" aria-describedby="username" formControlName="username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}">
+          <small id="emailHelp" class="form-text text-muted">Please enter a valid email address.</small>
+        </div>
+        <div class="form-group ">
+          <label for="password" style="color:white;">Password</label>
+          <input type="password" class="form-control" id="password" 
+          formControlName="password" required>
+        </div>
+        <br>
+        <button type="submit" (click)="onAdminLogin()" class="btn btn-success">Login</button>
+      </form>
+
+    </div>
+  </div>
+</body>
+
+</html>
