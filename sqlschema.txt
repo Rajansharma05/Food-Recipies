@@ -1,0 +1,80 @@
+Create Database recipies;
+
+mysql> use recipies;
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_recipies |
++--------------------+
+| admin              |
+| recipie            |
+| review             |
+| user               |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc admin;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| password | varchar(255) | YES  |     | NULL    |                |
+| username | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> desc recipie;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| cooking_steps | longtext     | YES  |     | NULL    |                |
+| category      | varchar(255) | YES  |     | NULL    |                |
+| imgurl        | varchar(255) | YES  |     | NULL    |                |
+| ingrediants   | varchar(255) | YES  |     | NULL    |                |
+| name          | varchar(255) | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> desc user;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| email    | varchar(255) | YES  |     | NULL    |                |
+| name     | varchar(255) | YES  |     | NULL    |                |
+| password | varchar(255) | YES  |     | NULL    |                |
+| phone    | bigint       | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> desc review;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| recipiename | varchar(255) | YES  |     | NULL    |                |
+| rating      | int          | NO   |     | NULL    |                |
+| review      | varchar(255) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.03 sec)
+--
+
+mysql> select * from admin;
++----+----------+-----------------+
+| id | password | username        |
++----+----------+-----------------+
+|  1 | komal123 | komal@gmail.com |
+|  2 | reddy123 | reddy@gmail.com |
++----+----------+-----------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from user;
++----+-----------------+-------+----------+------------+
+| id | email           | name  | password | phone      |
++----+-----------------+-------+----------+------------+
+|  1 | komal@gmail.com | komal | 12345    | 1234567890 |
+|  2 | reddy@gmail.com | reddy | 67890    | 9876543210 |
++----+-----------------+-------+----------+------------+
+2 rows in set (0.00 sec)
+
